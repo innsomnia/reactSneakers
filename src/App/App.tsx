@@ -1,4 +1,5 @@
 import { Header } from '../components/Header/Header'
+import { Item } from '../components/Item/Item'
 import { Search } from '../components/Search/Search'
 import styles from './styles.module.scss'
 
@@ -14,6 +15,12 @@ export const App = () => {
       <div className={styles.searchCont}>
         <h2>Все кроссовки</h2>
         <Search />
+      </div>
+      <div className={styles.itemsList}>
+        <Item />
+        <Item />
+        <Item />
+        <Item />
       </div>
     </div>
   )

@@ -1,0 +1,83 @@
+.itemCont {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  outline: 1px solid #f3f3f3;
+  border-radius: 40px;
+  margin: 20px;
+  padding: 25px;
+
+  img {
+    width: 133px;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 400px;
+  }
+
+  span {
+    color: #bdbdbd;
+    font-size: 11px;
+    font-weight: 500px;
+  }
+
+  p {
+    color: black;
+    font-size: 14px;
+    font-weight: 700px;
+  }
+}
+
+.priceCont {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.priceLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 7px;
+}
+
+.addBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  outline: 1px solid #f2f2f2;
+  color: #f2f2f2;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.favBtn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  outline: 1px solid #f2f2f2;
+  color: #f2f2f2;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}
