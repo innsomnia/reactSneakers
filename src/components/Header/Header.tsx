@@ -15,15 +15,15 @@ export const Header = () => {
       </div>
 
       <div className={styles.contNavigation}>
-        <div>
+        <div className={styles.cart}>
           <img src={cart} alt='img' />
           <p>1200 руб.</p>
         </div>
-        <div>
+        <div className={styles.fav}>
           <img src={fav} alt='img' />
           <p>Избранное</p>
         </div>
-        <div>
+        <div className={styles.profile}>
           <img src={prof} alt='img' />
           <p>Профиль</p>
         </div>
