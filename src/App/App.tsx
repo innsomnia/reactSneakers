@@ -1,3 +1,4 @@
+import { Drawer } from '../components/Drawer/Drawer'
 import { Header } from '../components/Header/Header'
 import { Item } from '../components/Item/Item'
 import { Search } from '../components/Search/Search'
@@ -7,7 +8,6 @@ import styles from './styles.module.scss'
 import mainImg from '/public/mainImg.png'
 
 export const App = () => {
-  console.log('items', items)
   return (
     <div className={styles.main}>
       <Header />
@@ -23,6 +23,7 @@ export const App = () => {
           <Item key={item.id} item={item} />
         ))}
       </div>
+      <Drawer />
     </div>
   )
 }

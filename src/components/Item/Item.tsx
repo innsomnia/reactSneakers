@@ -1,15 +1,26 @@
+import { useState } from 'react'
 import styles from './styles.module.scss'
-import favBtn from '/public/favBtn.svg'
 
 interface itemProp {
   item: { id: number; title: string; price: number; imageUrl: string }
 }
 
 export const Item = ({ item }: itemProp) => {
+  const [isAdded, setIsAdded] = useState(false)
+  const [isFav, setIsFav] = useState(false)
+
+  const addToCart = () => {
+    setIsAdded(!isAdded)
+  }
+
+  const addToFav = () => {
+    setIsFav(!isFav)
+  }
+
   return (
     <div className={styles.itemCont}>
-      <button className={styles.favBtn}>
-        <img src={favBtn} alt='img' />
+      <button onClick={addToFav} className={isFav ? styles.addedToFav : styles.addToFav}>
+        {isFav ? '♥' : '♡'}
       </button>
       <img src={item.imageUrl} alt='img' />
       <h3>{item.title}</h3>
@@ -20,7 +31,9 @@ export const Item = ({ item }: itemProp) => {
           <p>{item.price} руб.</p>
         </div>
 
-        <button className={styles.addBtn}>+</button>
+        <button onClick={addToCart} className={isAdded ? styles.addedBtn : styles.addBtn}>
+          {isAdded ? '✓' : '+'}
+        </button>
       </div>
     </div>
   )
