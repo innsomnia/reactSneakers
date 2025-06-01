@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Drawer } from '../components/Drawer/Drawer'
 import { Header } from '../components/Header/Header'
 import { Item } from '../components/Item/Item'
@@ -8,9 +9,14 @@ import styles from './styles.module.scss'
 import mainImg from '/public/mainImg.png'
 
 export const App = () => {
+  const [open, setOpen] = useState(false)
+
+  const openDrawer = () => setOpen(true)
+  const closeDrawer = () => setOpen(false)
+
   return (
     <div className={styles.main}>
-      <Header />
+      <Header openDrawer={openDrawer} />
       <div className={styles.mainBanner}>
         <img src={mainImg} alt='' />
       </div>
@@ -23,7 +29,7 @@ export const App = () => {
           <Item key={item.id} item={item} />
         ))}
       </div>
-      <Drawer />
+      {open && <Drawer open={open} closeDrawer={closeDrawer} />}
     </div>
   )
 }

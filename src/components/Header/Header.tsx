@@ -3,7 +3,11 @@ import cart from '/public/Cart.svg'
 import fav from '/public/Fav.svg'
 import prof from '/public/Prof.svg'
 
-export const Header = () => {
+interface HeaderProps {
+  openDrawer: () => void
+}
+
+export const Header = ({ openDrawer }: HeaderProps) => {
   return (
     <div className={styles.header}>
       <div className={styles.title}>
@@ -15,7 +19,7 @@ export const Header = () => {
       </div>
 
       <div className={styles.contNavigation}>
-        <div className={styles.cart}>
+        <div onClick={() => openDrawer()} className={styles.cart}>
           <img src={cart} alt='img' />
           <p>1200 руб.</p>
         </div>
